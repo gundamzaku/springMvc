@@ -16,4 +16,10 @@ java spring的代码
 ```
 官网地址
 http://site.mockito.org/
+```  
+  
+*@Autowired*
+```
+Spring 2.5 引入了 @Autowired 注释，它可以对类成员变量、方法及构造函数进行标注，完成自动装配的工作。 
+通过 @Autowired的使用来消除 set ，get方法。
 ```
