@@ -47,6 +47,7 @@ public class HomeControllerTest{
 
     @Test
     public void shouldShowRecentSpitles() throws Exception{
+        //创建20个对象
         List<Spittle> expectedSpittles = createSpittleList(20);
         SpittleRepository mockRepository = mock(SpittleRepository.class);
 

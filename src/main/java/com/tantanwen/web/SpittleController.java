@@ -16,13 +16,12 @@ public class SpittleController {
 
     private SpittleRepository spittleRepository;
 
-    @Autowired
+    @Autowired  //其实意思就是把SpittleRepository注入进来吧?(不加也可以正常注入）
     public SpittleController(SpittleRepository spittleRepository){
         this.spittleRepository = spittleRepository;
     }
 
     @RequestMapping(method = RequestMethod.GET)
-
     public String spittles(Model model){
         model.addAttribute(spittleRepository.findSpittles(Long.MAX_VALUE,20));
         return "spittles";
