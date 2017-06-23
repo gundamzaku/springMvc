@@ -1,7 +1,7 @@
 # tantanwen
 java spring的代码  
   
-##名词说明  
+## 名词说明  
 *import static（静态导入）*  
 ```
 是JDK1.5中的新特性，
