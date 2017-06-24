@@ -16,7 +16,7 @@ public class SpittleRepositoryImpl implements SpittleRepository {
     public List<Spittle> findSpittles(long max, int count) {
 
         for (int i = 0; i < count; i++) {
-            spittles.add(new Spittle("Spittle" + i, new Date()));
+            spittles.add(new Spittle("Spittle " + i, new Date()));
         }
         return spittles;
     }
