@@ -13,8 +13,10 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
  * Created by dan on 2017/6/22.
  */
 @Configuration
+@EnableWebMvc
 @ComponentScan("com.tantanwen.web")
 public class WebConfig extends WebMvcConfigurerAdapter{
+
     @Bean
     public ViewResolver viewResolver(){
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
@@ -24,9 +26,20 @@ public class WebConfig extends WebMvcConfigurerAdapter{
         resolver.setExposeContextBeansAsAttributes(true);
         return resolver;
     }
+    /*
+    @Bean
+    public void RequestMappingHandlerMapping (){
+
+    }
+
+    @Bean
+    public void RequestMappingHandlerAdapter (){
+
+    }*/
 
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer){
+
         configurer.enable();
     }
 }

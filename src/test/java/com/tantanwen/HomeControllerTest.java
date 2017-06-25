@@ -4,9 +4,11 @@ import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
+import com.tantanwen.data.SpitterRepository;
 import com.tantanwen.data.Spittle;
 import com.tantanwen.data.SpittleRepository;
 import com.tantanwen.web.HomeController;
+import com.tantanwen.web.SpitterController;
 import com.tantanwen.web.SpittleController;
 import org.junit.Test;
 import org.springframework.test.web.servlet.MockMvc;
@@ -118,4 +120,14 @@ public class HomeControllerTest{
                 .andExpect(MockMvcResultMatchers.model().attributeExists("spittleList"))//得到模型验证器；
                 .andExpect(MockMvcResultMatchers.model().attribute("spittleList",hasItems(expectedspittle.toArray())));
     }
+
+    /*
+    @Test
+    public void shouldShowRegistration() throws Exception{
+        SpitterController controller = new SpitterController(SpitterRepository);
+        MockMvc mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
+
+        mockMvc.perform(MockMvcRequestBuilders.get("/spitter/register"))
+                .andExpect(MockMvcResultMatchers.view().name("registerForm"));
+    }*/
 }
