@@ -27,9 +27,14 @@ public class SpitterController {
     public SpitterController(SpitterRepository spitterRepository){//一定要有个方法去实现这个IMPL
         this.spitterRepository = spitterRepository;
     }
-
+    /*
     @RequestMapping(value = "/register",method = GET)
     public String showRegistrationForm(){
+        return "registerForm";
+    }*/
+    @RequestMapping(value = "/register",method = GET)
+    public String showRegistrationForm(Model model){
+        model.addAttribute(new Spitter());//要将这个注入到FORM中的
         return "registerForm";
     }
 
@@ -37,12 +42,6 @@ public class SpitterController {
     public String processRegistration(
             @Valid Spitter spitter,
             Errors errors){
-        System.out.println("username : "+spitter.getUsername());
-        System.out.println("email : "+spitter.getEmail());
-        System.out.println("lastname : "+spitter.getLastName());
-        System.out.println("firstname : "+spitter.getFirstName());
-        System.out.println("password : "+spitter.getPassword());
-        System.out.println(errors.hasErrors());
         if(errors.hasErrors()){
             return  "registerForm";
         }
